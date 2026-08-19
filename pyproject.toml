@@ -1,0 +1,26 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "stoatswarm"
+version = "0.1.0"
+description = "Seeded simulation environments for autonomous drone-swarm exploration"
+readme = "README.md"
+requires-python = ">=3.10"
+dependencies = []
+
+[project.optional-dependencies]
+simulation = ["pybullet>=3.2.7"]
+video = [
+    "pybullet>=3.2.7",
+    "numpy>=2.0",
+    "imageio>=2.35",
+    "imageio-ffmpeg>=0.5",
+]
+
+[project.scripts]
+stoatswarm-tunnel = "stoatswarm.cli:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]
